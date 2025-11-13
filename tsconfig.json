@@ -1,40 +1,32 @@
 // tsconfig.json
 {
-  "extends": "@react-native/typescript-config/tsconfig.json",
   "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "lib": ["es2019", "es2020.promise", "es2020.bigint", "es2020.string"],
+    "jsx": "react-native",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
-      "@/components/*": ["src/components/*"],
-      "@/screens/*": ["src/screens/*"],
-      "@/store/*": ["src/store/*"],
-      "@/api/*": ["src/api/*"],
-      "@/hooks/*": ["src/hooks/*"],
-      "@/utils/*": ["src/utils/*"],
-      "@/constants/*": ["src/constants/*"],
-      "@/types/*": ["src/types/*"],
-      "@/navigation/*": ["src/navigation/*"],
-      "@/services/*": ["src/services/*"]
-    },
-    "strict": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "react-native",
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "target": "ESNext",
-    "lib": ["ESNext"],
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true
+      "@components/*": ["src/components/*"],
+      "@features/*": ["src/features/*"],
+      "@services/*": ["src/services/*"],
+      "@utils/*": ["src/utils/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@navigation/*": ["src/navigation/*"],
+      "@assets/*": ["src/assets/*"],
+      "@theme/*": ["src/theme/*"],
+      "@types/*": ["src/types/*"]
+    }
   },
+  "extends": "@react-native/typescript-config/tsconfig.json",
   "include": ["src/**/*"],
-  "exclude": [
-    "node_modules",
-    "babel.config.js",
-    "metro.config.js",
-    "jest.config.js"
-  ]
+  "exclude": ["node_modules", "babel.config.js", "metro.config.js"]
 }
