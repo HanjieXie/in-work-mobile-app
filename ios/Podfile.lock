@@ -1919,10 +1919,36 @@ PODS:
     - React-RCTFBReactNativeSpec
     - ReactCommon/turbomodule/core
     - SocketRocket
-  - react-native-config (1.5.9):
-    - react-native-config/App (= 1.5.9)
-  - react-native-config/App (1.5.9):
+  - react-native-config (1.6.0):
+    - react-native-config/App (= 1.6.0)
+  - react-native-config/App (1.6.0):
+    - boost
+    - DoubleConversion
+    - fast_float
+    - fmt
+    - glog
+    - hermes-engine
+    - RCT-Folly
+    - RCT-Folly/Fabric
+    - RCTRequired
+    - RCTTypeSafety
     - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-jsi
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-renderercss
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - SocketRocket
+    - Yoga
   - react-native-document-picker (9.3.1):
     - boost
     - DoubleConversion
@@ -3328,7 +3354,7 @@ SPEC CHECKSUMS:
   React-logger: 500f2fa5697d224e63c33d913c8a4765319e19bf
   React-Mapbuffer: 06d59c448da7e34eb05b3fb2189e12f6a30fec57
   React-microtasksnativemodule: d1ee999dc9052e23f6488b730fa2d383a4ea40e5
-  react-native-config: d08b60865268872495a43e211059b4606131fe01
+  react-native-config: c45f992856651ec4c05251431ea57a18ceaa8ae4
   react-native-document-picker: dcf5e57f3bcae61bf8384a1c6f90896f81e17941
   react-native-safe-area-context: c00143b4823773bba23f2f19f85663ae89ceb460
   React-NativeModulesApple: 46690a0fe94ec28fc6fc686ec797b911d251ded0

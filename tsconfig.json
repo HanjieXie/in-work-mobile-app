@@ -9,7 +9,6 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
@@ -26,7 +25,7 @@
       "@types/*": ["src/types/*"]
     }
   },
-  "extends": "@react-native/typescript-config/tsconfig.json",
+  "extends": "@react-native/typescript-config",
   "include": ["src/**/*"],
   "exclude": ["node_modules", "babel.config.js", "metro.config.js"]
 }
