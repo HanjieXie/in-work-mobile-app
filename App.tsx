@@ -12,9 +12,14 @@ import {
   useSafeAreaInsets,
 } from 'react-native-safe-area-context';
 
+
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
-
+  if (__DEV__) {
+    import('./ReactotronConfig').then(() =>
+      console.log('Reactotron Configured'),
+    );
+  }
   return (
     <SafeAreaProvider>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
