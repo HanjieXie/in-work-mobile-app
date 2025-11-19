@@ -1,28 +1,28 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { useAppSelector } from '../hooks/useAppDispatch';
-import AuthNavigator from './AuthNavigator';
-import AppNavigator from './AppNavigator';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { useAppSelector } from '@hooks/useAppSelector';
+import { AuthNavigator } from './AuthNavigator';
+import { TabNavigator } from './TabNavigator';
 import { linking } from './linking';
 
-const Stack = createStackNavigator();
-const RooNavigator: React.FC = () => {
-    const isAuthenticated = useAppSelector(state => state.auth.isAuthenticated);
+const Stack = createNativeStackNavigator();
+
+export const RootNavigator: React.FC = () => {
+    const isAuthenticated = useAppSelector((state) => state.auth?.isAuthenticated ?? false);
 
     return (
         <NavigationContainer linking={linking}>
-            <Stack.navigator srceenOptions={{ headerShown: false }}>
+            <Stack.Navigator screenOptions={{ headerShown: false }}>
                 {/* 判断是否已经验证登陆 */}
                 {isAuthenticated ? (
-                    <Stack.Screen name="App" component={AppNavigator} />
+                    <Stack.Screen name="App" component={TabNavigator} />
                 ) : (
                     <Stack.Screen name="Auth" component={AuthNavigator} />
                 )}
-            </Stack.navigator>
-
+            </Stack.Navigator>
         </NavigationContainer>
     )
 }
 
-export default RooNavigator;
+export default RootNavigator;

@@ -1,13 +1,13 @@
 import React from "react";
-import { createStackNavigator } from "@react-navigation/stack";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { AuthStackParamList } from "@/types/navigation";
 
 // 临时占位组件
-import LoginScreen from "@features/auth/screens/LoginScreen";  
-import RegisterScreen from "@features/auth/screens/RegisterScreen";
+import LoginScreen from "@features/auth/screen/LoginScreen";
+import RegisterScreen from "@features/auth/screen/RegisterScreen";
 
 
-const Stack = createStackNavigator<AuthStackParamList>();
+const Stack = createNativeStackNavigator<AuthStackParamList>();
 
 export const AuthNavigator = () => {
   return (
@@ -17,3 +17,5 @@ export const AuthNavigator = () => {
     </Stack.Navigator>
   );
 }
+
+export default AuthNavigator;

@@ -29,21 +29,23 @@ const persistConfig = {
   blacklist: ['todo', 'email', 'message'],  // RTK Query 的 reducer 不需要持久化
 };
 
-/* 
+/*
     TODO: 创建并配置 Redux Store
 */
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
 export const store = configureStore({
     // 使用 Persist 包装过的 Reducer
-    reducer: persistReducer, 
+    reducer: persistedReducer,
     // 配置中间件
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
             serializableCheck:{
-                ignoreActions:[FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+                ignoredActions:[FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
             },
         })
         // 添加 RTK Query 的中间件，用于处理 API 请求
-        .concat(baseApi.middleware),    
+        .concat(baseApi.middleware),
 });
 
 
